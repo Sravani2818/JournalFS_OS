@@ -1,0 +1,56 @@
+=== test_errors ===
+binary : ./journalfs
+workdir: /tmp/jfs_test_test_errors_Q9lPM1
+
+  PASS  read a nonexistent file
+  PASS  create a duplicate name
+  PASS  write to a nonexistent file
+  PASS  append to a nonexistent file
+  PASS  delete a nonexistent file
+  PASS  rmdir a nonexistent directory
+  PASS  stat a nonexistent file
+  PASS  truncate a nonexistent file
+  PASS  rename a nonexistent file
+  PASS  mkdir over an existing name
+  PASS  path through a file
+  PASS  rmdir on a file
+  PASS  cat on a regular file is fine
+  PASS  cat on a directory
+  PASS  unknown command
+  PASS  create without an argument
+  PASS  truncate with a non numeric size
+  PASS  chmod with an invalid mode
+  PASS  chmod without a file
+  PASS  rename with one argument
+  PASS  format with a bad size
+  PASS  name longer than JFS_NAME_MAX
+  PASS  path whose parent does not exist
+  PASS  component that is not a directory
+  PASS  very long path component
+  PASS  unknown crash point
+  PASS  unknown crash point exit status
+  PASS  file over the maximum size
+  PASS  absurd size
+  PASS  image smaller than the minimum
+  PASS  image size that is not a block multiple
+  PASS  mount a missing image
+  PASS  mount a file that is not an image
+  PASS  mount a truncated image
+  PASS  rmdir on a regular file
+  PASS  unmounted filesystem rejects 'create /x'
+  PASS  unmounted filesystem rejects 'cat /x'
+  PASS  unmounted filesystem rejects 'ls'
+  PASS  unmounted filesystem rejects 'df'
+  PASS  unmounted filesystem rejects 'sync'
+  PASS  unmounted filesystem rejects 'check'
+  PASS  unmounted filesystem rejects 'journal'
+  PASS  unmounted filesystem rejects 'stats'
+  PASS  unmounted filesystem rejects 'stat /x'
+  PASS  unmounted filesystem rejects 'rm /x'
+  PASS  unterminated quote does not crash the CLI
+  PASS  path of only slashes
+  PASS  dotdot name is refused
+  PASS  cd .. from the root stays at the root
+
+test_errors: 49 passed, 0 failed
+log written to results/test_errors.log

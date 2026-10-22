@@ -1,0 +1,22 @@
+=== test_bcache ===
+binary : ./journalfs
+workdir: /tmp/jfs_test_test_bcache_vFrVoY
+
+  PASS  bcache_init succeeds with 4 frames
+  PASS  write block 10
+  PASS  read block 10
+  PASS  read block 10 returned written data
+  PASS  hits and misses recorded correctly
+  PASS  LRU victim evicted with writeback
+  PASS  evicted dirty block 11 persisted to backing disk
+  PASS  jfs_bcache_flush_all succeeds
+  PASS  flushed dirty block 14 persisted to backing disk
+  PASS  cat verifies cached content
+  PASS  stats outputs bcache_hits
+  PASS  stats outputs bcache_misses
+  PASS  stats outputs bcache_evictions
+  PASS  stats outputs bcache_writebacks
+  PASS  stats outputs bcache_flushes
+
+test_bcache: 15 passed, 0 failed
+log written to results/test_bcache.log

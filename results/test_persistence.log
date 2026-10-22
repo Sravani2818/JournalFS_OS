@@ -1,0 +1,33 @@
+=== test_persistence ===
+binary : ./journalfs
+workdir: /tmp/jfs_test_test_persistence_DSsjEL
+
+  PASS  first session writes the file
+  PASS  content survives a restart
+  PASS  appended content survives a restart
+  PASS  permission bits survive a restart
+  PASS  inode number survives a restart
+  PASS  size survives a restart
+  PASS  bulk setup reports no errors
+  PASS  consistent after round
+  PASS  40 files hashed in round 1
+  PASS  consistent after round
+  PASS  content hashes identical in round
+  PASS  consistent after round
+  PASS  content hashes identical in round
+  PASS  content unchanged by reading
+  PASS  hash before/after a read session
+  PASS  batched session has no errors
+  PASS  first batched file persisted
+  PASS  second batched file persisted
+  PASS  third batched file persisted
+  PASS  batched image is consistent
+  PASS  60000 byte file hash is stable across mounts
+  PASS  large file reports 15 blocks
+  PASS  deleted file stays deleted
+  PASS  recursive delete reports success
+  PASS  the removed tree is gone
+  PASS  only the unrelated file is left
+
+test_persistence: 26 passed, 0 failed
+log written to results/test_persistence.log

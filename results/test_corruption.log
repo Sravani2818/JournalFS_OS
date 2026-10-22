@@ -1,0 +1,42 @@
+=== test_corruption ===
+binary : ./journalfs
+workdir: /tmp/jfs_test_test_corruption_9fzCPu
+
+  PASS  reference image: the journal holds a committed transaction
+  PASS  reference image: recovery produces the committed value
+  PASS  damaged redo payload: mount refuses with a clear reason
+  PASS  damaged redo payload: the failure is reported as an error
+  PASS  damaged record header: the truncation is reported
+  PASS  damaged record header: the older consistent state is served
+  PASS  damaged record header: inspect marks the window
+  PASS  damaged record header: check warns about the truncation
+  PASS  impossible record length: rejected and reported
+  PASS  impossible record length: no torn data is served
+  PASS  commit record turned into an OP record: transaction ignored
+  PASS  commit record turned into an OP record: old value served
+  PASS  commit record turned into an OP record: no torn data
+  PASS  split transaction id: the mismatch is reported
+  PASS  split transaction id: nothing is replayed from it
+  PASS  one destroyed checkpoint slot: mount falls back to the other
+  PASS  one destroyed checkpoint slot: still consistent
+  PASS  both checkpoint slots destroyed: mount refuses
+  PASS  both checkpoint slots destroyed: reported as an error
+  PASS  window pointing outside the records: damage reported
+  PASS  window pointing outside the records: nothing invented
+  PASS  window pointing outside the records: still consistent
+  PASS  broken superblock magic: recognised as a foreign image
+  PASS  broken superblock magic: mount fails
+  PASS  broken superblock checksum: mount fails
+  PASS  broken superblock checksum: the reason mentions the superblock
+  PASS  truncated image file: mount fails
+  PASS  truncated image file: the reason is explicit
+  PASS  damaged inode map record: mount fails
+  PASS  damaged inode map record: the reason names the inode map
+  PASS  zeroed log record: refusal or explicit damage report
+  PASS  random data: mount fails
+  PASS  random data: recognised as a foreign image
+  PASS  fuzz: no crash or abort in 8 damaged images
+  PASS  damaged window: the report survives a remount
+
+test_corruption: 35 passed, 0 failed
+log written to results/test_corruption.log

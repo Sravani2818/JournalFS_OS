@@ -1,0 +1,48 @@
+=== test_stress ===
+binary : ./journalfs
+workdir: /tmp/jfs_test_test_stress_raTgXW
+
+  PASS  seed 1: 600 operations pass
+  PASS  seed 7: 600 operations pass
+  PASS  seed 12: 600 operations pass
+  PASS  seed 33: 600 operations pass
+  PASS  first run formats and fills the image
+  PASS  second run adopts the existing contents and continues
+  PASS  the second run really did adopt files
+  PASS  the image is consistent after two workloads
+  PASS  crash at post_write: the workload was aborted mid-flight
+  PASS  crash at post_write: recovery and a new workload both succeed
+  PASS  crash at post_write: the recovered image is consistent
+  PASS  crash at post_sync: the workload was aborted mid-flight
+  PASS  crash at post_sync: recovery and a new workload both succeed
+  PASS  crash at post_sync: the recovered image is consistent
+  PASS  crash at post_commit: the workload was aborted mid-flight
+  PASS  crash at post_commit: recovery and a new workload both succeed
+  PASS  crash at post_commit: the recovered image is consistent
+  PASS  crash at post_commit_sync: the workload was aborted mid-flight
+  PASS  crash at post_commit_sync: recovery and a new workload both succeed
+  PASS  crash at post_commit_sync: the recovered image is consistent
+  PASS  crash at post_apply: the workload was aborted mid-flight
+  PASS  crash at post_apply: recovery and a new workload both succeed
+  PASS  crash at post_apply: the recovered image is consistent
+  PASS  crash at checkpoint_post: the workload was aborted mid-flight
+  PASS  crash at checkpoint_post: recovery and a new workload both succeed
+  PASS  crash at checkpoint_post: the recovered image is consistent
+  PASS  crash at compact_post: the workload was aborted mid-flight
+  PASS  crash at compact_post: recovery and a new workload both succeed
+  PASS  crash at compact_post: the recovered image is consistent
+  PASS  crash during the recovery run: aborted as asked
+  PASS  the image still works after two crashes
+  PASS  two crashes left a consistent image
+  PASS  1 MiB image: the workload runs to the end
+  PASS  1 MiB image: the filesystem refused work instead of failing
+  PASS  1 MiB image: operation(s) were refused cleanly
+  PASS  a full filesystem is still consistent
+  PASS  a full filesystem still lists its files
+  PASS  the same seed produces the same workload
+  PASS  clean unmount: the image is marked clean
+  PASS  clean unmount: the journal window was reclaimed
+  PASS  the image mounts and checks out
+
+test_stress: 41 passed, 0 failed
+log written to results/test_stress.log

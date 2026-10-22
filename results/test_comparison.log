@@ -1,0 +1,34 @@
+=== test_comparison ===
+binary : ./journalfs
+workdir: /tmp/jfs_test_test_comparison_IzstOz
+
+  PASS  with-journal: baseline initialized
+  PASS  with-journal: pre-commit crash injected
+  PASS  with-journal: mount after pre-commit crash succeeds
+  PASS  with-journal: uncommitted write discarded (old value wins)
+  PASS  with-journal: partial mutated data is not exposed
+  PASS  with-journal: filesystem is consistent
+  PASS  with-journal: post-commit crash injected
+  PASS  with-journal: mount after post-commit crash succeeds
+  PASS  with-journal: committed write replayed forward
+  PASS  with-journal: recovery reports replayed transaction
+  PASS  with-journal: filesystem is consistent
+  PASS  without-journal: warns that WAL is disabled
+  PASS  without-journal: crash interrupted uncheckpointed session
+  PASS  without-journal: recovery reports nothing to redo
+  PASS  without-journal: uncheckpointed file was not recovered
+  PASS  group-commit: 4-transaction batch runs cleanly
+  PASS  group-commit: stats report group_commit_batch=4
+  PASS  group-commit: stats report group commits occurred
+  PASS  group-commit: stats report batched flushes occurred
+  PASS  group-commit: file 1 persisted
+  PASS  group-commit: file 2 persisted
+  PASS  group-commit: file 3 persisted
+  PASS  group-commit: file 4 persisted
+  PASS  group-commit: filesystem remains consistent
+  PASS  set group-commit command succeeds
+  PASS  set group-commit acknowledged
+  PASS  stats confirms group_commit_batch is 8
+
+test_comparison: 27 passed, 0 failed
+log written to results/test_comparison.log

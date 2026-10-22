@@ -1,0 +1,64 @@
+=== test_crash_recovery ===
+binary : ./journalfs
+workdir: /tmp/jfs_test_test_crash_recovery_XE9Lfz
+
+  PASS  pre_write: crash was injected
+  PASS  pre_write: file still holds the old value
+  PASS  pre_write: recovery is idempotent
+  PASS  post_write: crash was injected
+  PASS  post_write: file still holds the old value
+  PASS  post_write: recovery is idempotent
+  PASS  post_sync: crash was injected
+  PASS  post_sync: file still holds the old value
+  PASS  post_sync: recovery is idempotent
+  PASS  post_commit_sync: crash was injected
+  PASS  post_commit_sync: committed change replayed
+  PASS  post_commit_sync: recovery is idempotent
+  PASS  post_apply: crash was injected
+  PASS  post_apply: committed change replayed
+  PASS  post_apply: recovery is idempotent
+  PASS  after_imap: crash was injected
+  PASS  after_imap: committed change replayed
+  PASS  after_imap: recovery is idempotent
+  PASS  checkpoint_mid: crash was injected
+  PASS  checkpoint_mid: committed change replayed
+  PASS  checkpoint_mid: recovery is idempotent
+  PASS  checkpoint_post: crash was injected
+  PASS  checkpoint_post: committed change replayed
+  PASS  checkpoint_post: recovery is idempotent
+  PASS  post_commit: crash was injected
+  PASS  post_commit: recorded commit replayed (a process crash keeps the page cache)
+  PASS  recover_mid: crash during recovery was injected
+  PASS  recover_mid: the next mount finishes the replay
+  PASS  ghost: crash was injected
+  PASS  the uncommitted file does not exist
+  PASS  the uncommitted file is reported missing
+  PASS  an older incomplete record does not hide a newer commit
+  PASS  the leftover record is not mistaken for damage
+  PASS  the image is consistent after both crashes
+  PASS  first crash recovered by the next mount
+  PASS  two crashes in a row keep both committed changes
+  PASS  batched crash session crashed at the third commit
+  PASS  all three committed appends were replayed
+  PASS  mount reports the replay statistics
+  PASS  recovery replayed more than one transaction
+  PASS  journal window is empty after the replay
+  PASS  batched appends are all present
+  PASS  mount reports the replayed transactions
+  PASS  compact_mid: crash during compaction was injected
+  PASS  compact_mid: image is consistent after the crash
+  PASS  compact_mid: recovered content is the last committed version
+  PASS  compact_mid: recovery is idempotent after compaction crash
+  PASS  compact_mid: still consistent after the second mount
+  PASS  compact_post: crash during compaction was injected
+  PASS  compact_post: image is consistent after the crash
+  PASS  compact_post: recovered content is the last committed version
+  PASS  compact_post: recovery is idempotent after compaction crash
+  PASS  compact_post: still consistent after the second mount
+  PASS  pre_format: crash was injected
+  PASS  pre_format: the image is byte for byte unchanged
+  PASS  pre_format: the filesystem still mounts
+  PASS  mount works with one damaged checkpoint slot
+
+test_crash_recovery: 57 passed, 0 failed
+log written to results/test_crash_recovery.log

@@ -1,0 +1,63 @@
+=== test_functional ===
+binary : ./journalfs
+workdir: /tmp/jfs_test_test_functional_oSfspL
+
+  PASS  format creates an image
+  PASS  image file exists
+  PASS  mount succeeds on a fresh image
+  PASS  unmount succeeds
+  PASS  format refuses to overwrite without --force
+  PASS  format failure exit status
+  PASS  format --force overwrites
+  PASS  create reports success
+  PASS  write reports success
+  PASS  cat returns the content
+  PASS  read prints a size header
+  PASS  stat shows the inode number
+  PASS  stat shows the mode
+  PASS  stat shows a log address
+  PASS  stat shows the size
+  PASS  append extends the content
+  PASS  write with escapes produces two lines
+  PASS  second line present
+  PASS  hash of the new content is reported
+  PASS  truncate cuts the content
+  PASS  stat shows the truncated size
+  PASS  truncate can grow a file with zeros
+  PASS  ls lists both files
+  PASS  ls lists the second file
+  PASS  rename reports success
+  PASS  renamed file appears in ls
+  PASS  rm reports success
+  PASS  removed file is gone from ls
+  PASS  only one entry remains
+  PASS  filesystem is consistent after rename/rm
+  PASS  mkdir reports success
+  PASS  nested mkdir reports success
+  PASS  cd changes the working directory
+  PASS  relative path reads through cd
+  PASS  cd .. moves back up
+  PASS  ls PATH lists another directory
+  PASS  stat marks directories
+  PASS  rmdir refuses a non-empty directory
+  PASS  rm -r removes a tree
+  PASS  removed tree is gone from ls
+  PASS  only the untouched file remains
+  PASS  chmod applies
+  PASS  read without permission is denied
+  PASS  read permission restored
+  PASS  write without permission is denied
+  PASS  create in a write-protected directory is denied
+  PASS  maximum file size is accepted
+  PASS  one byte over the limit is refused
+  PASS  df reports capacity
+  PASS  df reports inodes
+  PASS  sync writes a checkpoint
+  PASS  check reports a consistent filesystem
+  PASS  help lists commands
+  PASS  version reports the format version
+  PASS  help for one command
+  PASS  clean run exit status
+
+test_functional: 56 passed, 0 failed
+log written to results/test_functional.log
